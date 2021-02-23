@@ -3,7 +3,7 @@ fn change_example(mut example: i32) -> i32 {
     example
 }
 
-fn main() -> Result<(), Box<dyn Error>> {
+fn main() {
     let mut example: i32 = 32;
     example = change_example(example);
     println!("Example = {}", example);

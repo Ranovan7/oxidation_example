@@ -1,6 +1,5 @@
-mod lib;
-use crate::lib::*;
-
+use playground::texts::*;
+use playground::belongings::*;
 
 #[derive(Debug)]
 struct Point<T, U> {
@@ -142,6 +141,6 @@ fn main() {
     println!("From List {:?}", number_list);
 
     println!("\n# others");
-    let pair = Pair {x: 1129, y: -5321};
+    let pair = Pair::new(1129, -5321);
     pair.cmp_display();
 }

@@ -1,5 +1,4 @@
-mod coin;
-use coin::*;
+use playground::belongings::*;
 
 fn main() {
     let mut wallet = Wallet{

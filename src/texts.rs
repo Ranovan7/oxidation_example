@@ -1,25 +1,5 @@
-use std::fmt::*;
-
-pub struct Pair<T> {
-    pub x: T,
-    pub y: T,
-}
-
-impl<T> Pair<T> {
-    fn new(x: T, y: T) -> Self {
-        Self { x, y }
-    }
-}
-
-impl<T: Display + PartialOrd> Pair<T> {
-    pub fn cmp_display(&self) {
-        if self.x >= self.y {
-            println!("The largest member is x = {}", self.x);
-        } else {
-            println!("The largest member is y = {}", self.y);
-        }
-    }
-}
+use std::fmt::Formatter;
+use std::fmt::Display;
 
 pub trait Summary {
     fn summarize_author(&self) -> String;
@@ -40,7 +20,7 @@ impl Summary for RandomText {
 }
 
 impl Display for RandomText {
-    fn fmt(&self, f: &mut Formatter) -> Result {
+    fn fmt(&self, f: &mut Formatter) -> Result<(), std::fmt::Error> {
         write!(f, "{}", self.text)
     }
 }
@@ -92,4 +72,9 @@ pub fn notify<T>(item: &T) -> ()
     where T: Summary + Display
 {
     println!("Breaking news! {}", item.summarize());
+}
+
+pub fn greeting(name: &str) -> String {
+    format!("Hello {}!", name)
+    // String::from("Hello!")   // uncomment to show failed test with custom message
 }
