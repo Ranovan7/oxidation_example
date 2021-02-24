@@ -78,3 +78,28 @@ pub fn greeting(name: &str) -> String {
     format!("Hello {}!", name)
     // String::from("Hello!")   // uncomment to show failed test with custom message
 }
+
+#[cfg(test)]
+mod texts_tests {
+    use super::*;
+
+    #[test]
+    #[ignore]
+    fn greeting_contains_name() {
+        let result = greeting("Carol");
+        assert!(
+            result.contains("Carol"),
+            "Greeting did not contain name, value was `{}`",
+            result
+        );
+    }
+
+    #[test]
+    fn it_works() -> Result<(), String> {
+        if 2 + 2 == 4 {
+            Ok(())
+        } else {
+            Err(String::from("two plus two does not equal four"))
+        }
+    }
+}
