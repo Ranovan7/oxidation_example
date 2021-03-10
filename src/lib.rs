@@ -4,3 +4,5 @@ pub mod maths;
 pub mod texts;
 #[allow(unused_imports)]
 pub mod belongings;
+#[allow(unused_imports)]
+pub mod mock_object;
