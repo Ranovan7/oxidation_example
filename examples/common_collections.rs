@@ -43,4 +43,22 @@ fn main() {
     let mut map = HashMap::new();
     map.insert(field_name, field_value);
     println!("{}", field_value);
+
+    println!("\n--- ENUMS ---");
+    #[derive(Debug)]
+    enum SpreadsheetCell {
+        Int(i32),
+        Float(f64),
+        Text(String),
+    }
+
+    let row = vec![
+        SpreadsheetCell::Int(3),
+        SpreadsheetCell::Text(String::from("blue")),
+        SpreadsheetCell::Float(10.12),
+    ];
+
+    for r in row {
+        println!("Row {:?}", r);
+    }
 }
