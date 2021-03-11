@@ -45,11 +45,21 @@ fn main() {
     println!("{}", field_value);
 
     println!("\n--- ENUMS ---");
-    #[derive(Debug)]
+    // #[derive(Debug)]
     enum SpreadsheetCell {
         Int(i32),
         Float(f64),
         Text(String),
+    }
+
+    impl SpreadsheetCell {
+        fn show(self) {
+            match self {
+                SpreadsheetCell::Int(val) => println!("Integer Cell with {}", val),
+                SpreadsheetCell::Float(val) => println!("Float Cell with {}", val),
+                SpreadsheetCell::Text(val) => println!("Text Cell with {}", val),
+            }
+        }
     }
 
     let row = vec![
@@ -59,6 +69,6 @@ fn main() {
     ];
 
     for r in row {
-        println!("Row {:?}", r);
+        r.show();
     }
 }
