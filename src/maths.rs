@@ -28,6 +28,10 @@ impl Guess {
 
         Guess { value }
     }
+
+    pub fn get_guess(self) -> i32 {
+        self.value
+    }
 }
 
 #[cfg(test)]
