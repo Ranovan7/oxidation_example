@@ -40,4 +40,10 @@ fn main() {
     }
     // ----------------------- //
     // SIMPLIFICATION END
+
+    let normal: u16 = 0;
+    let integer: i16 = 0;
+
+    // println!("Unsigned Int 0 -1 : {}", normal - 1);  // compile error : cause overflow
+    println!("Signed Int 0 -1 : {}", integer - 1);
 }
