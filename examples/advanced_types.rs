@@ -43,7 +43,11 @@ fn main() {
 
     let normal: u16 = 0;
     let integer: i16 = 0;
+    let u_ref: usize = 0;
+    let i_ref: isize = 0;
 
     // println!("Unsigned Int 0 -1 : {}", normal - 1);  // compile error : cause overflow
     println!("Signed Int 0 -1 : {}", integer - 1);
+    // println!("usize 0 -1 : {}", u_ref - 1);  // compile error : cause overflow
+    println!("isize Int 0 -1 : {}", i_ref - 1);
 }
